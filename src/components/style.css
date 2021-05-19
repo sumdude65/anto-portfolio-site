@@ -6,6 +6,8 @@
   height: 100vh;
 }
 
+/***** Featured post component ****/
+
 .featuredPost {
   display: flex;
   width: 60%;
@@ -21,7 +23,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 5px 0 0 5px;
+  border-radius: 5px;
 }
 .featuredPost .featuredPost-metadata {
   position: relative;
@@ -32,14 +34,14 @@
 }
 .featuredPost .featuredPost-metadata .featuredPost-title h1 {
   font-size: 30px;
-  margin: 2rem 0;
+  margin: 1rem 0;
   font-weight: 500;
 }
 .featuredPost .featuredPost-metadata .featuredPost-content p {
   font-size: 16px;
   letter-spacing: 1px;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 .featuredPost .featuredPost-metadata .featuredPost-date h2 {
   font-size: 16px;
@@ -47,4 +49,21 @@
   color: rgba(0, 0, 0, 0.7);
   position: absolute;
   right: 2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .featuredPost {
+    flex-direction: column;
+    width: 90%;
+  }
+  .featuredPost .featuredPost-image {
+    width: 100%;
+  }
+  .featuredPost .featuredPost-metadata {
+    width: 100%;
+    padding-top: 0;
+  }
+  .featuredPost .featuredPost-metadata .featuredPost-date h2 {
+    bottom: 1rem;
+  }
 }
