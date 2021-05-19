@@ -8,14 +8,14 @@ export const Posts = () => {
   const [posts, setPosts] = useState(null);
 
   const getPosts = async () => {
-    const query = `*[_type = 'post'] | order(_createdAt)[10]{
+    const query = `*[_type == 'post'] | order(_createdAt){
             "image":mainImage.asset->url,
             title,
-            body,
+            body[0],
             "date": _createdAt
         }`;
     const posts = await client.fetch(query);
-
+    console.log(posts);
     setPosts(posts);
   };
 
@@ -24,12 +24,12 @@ export const Posts = () => {
   }, []);
 
   return (
-    <>
+    <div className="postList">
       {!posts
         ? ""
         : posts.map((post, index) => {
             return <PostCard key={index} props={post} />;
           })}
-    </>
+    </div>
   );
 };

@@ -15,7 +15,6 @@ export const FeaturedPost = () => {
         "body":body[0],
 }`;
     const post = await client.fetch(query);
-    console.log(post);
     setPost(post);
   };
   useEffect(() => {
