@@ -25,19 +25,21 @@ export const FeaturedPost = () => {
       {!post ? (
         ""
       ) : (
-        <div className="featuredPost">
-          <div className="featuredPost-image">
-            <img src={post.image} alt={post.title} />
-          </div>
-          <div className="featuredPost-metadata">
-            <div className="featuredPost-date">
-              <h2>{post.date}</h2>
+        <div className="featuredPost-container">
+          <div className="featuredPost">
+            <div className="featuredPost-image">
+              <img src={post.image} alt={post.title} />
             </div>
-            <div className="featuredPost-title">
-              <h1>{post.title} </h1>
-            </div>
-            <div className="featuredPost-content">
-              <BlockContent blocks={post.body} />
+            <div className="featuredPost-metadata">
+              <div className="featuredPost-date">
+                <h2>{post.date}</h2>
+              </div>
+              <div className="featuredPost-title">
+                <h1>{post.title} </h1>
+              </div>
+              <div className="featuredPost-content">
+                <BlockContent blocks={post.body} />
+              </div>
             </div>
           </div>
         </div>
