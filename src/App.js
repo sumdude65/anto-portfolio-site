@@ -1,22 +1,18 @@
-import { Home } from "./components/pages/homepage";
-import { BlogPost } from "./components/pages/BlogPost";
-import { Navbar } from "./components/navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
 import "./style.css";
 
+import { Home } from "./components/homePage";
+import { Navbar } from "./components/navbar";
+import { About } from "./components/about";
+import { Contact } from "./components/contact";
+import { Footer } from "./components/footer";
 export const App = () => {
   return (
-    <Router>
+    <div className="appwrapper">
       <Navbar />
-      <Switch>
-        <Route path="/" exact>
-          <Home />
-        </Route>
-        <Route path="/:slug">
-          <BlogPost />
-        </Route>
-      </Switch>
-    </Router>
+      <Home />
+      <About />
+      <Contact />
+      <Footer />
+    </div>
   );
 };
