@@ -84,14 +84,15 @@ a {
 }
 
 /***** navbar styles   ****/
+header .navbar-toggle {
+  display: none;
+}
 header {
   display: flex;
   justify-content: space-between;
   position: fixed;
   z-index: 2;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
 }
 header .logo {
   margin-left: 2rem;
@@ -199,6 +200,17 @@ footer .contact-container {
   border-radius: 15px;
   padding: 2rem;
 }
+.content:hover,
+.content:hover .timeline-icon svg {
+  background-color: red;
+  color: white;
+  border-color: red;
+  transition: all 0.3s linear;
+}
+.content:hover .timeline-icon svg {
+  background-color: white;
+  color: black;
+}
 .left {
   left: 0%;
 }
@@ -284,4 +296,106 @@ footer div > p {
 footer .icon svg {
   color: white;
   font-size: 4rem;
+}
+
+/**** Smaller screen styles   ****/
+
+@media screen and (max-width: 600px) {
+  /*** Navbar ****/
+
+  header .links {
+    display: none;
+  }
+  header .navbar-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-right: 2rem;
+  }
+  header .navbar-toggle span {
+    outline: 2px solid #fff;
+    width: 1.5rem;
+    margin: 5px;
+    transition: all linear 0.3s;
+  }
+  header .navbar-modal {
+    position: absolute;
+    width: 75%;
+    background-color: white;
+    top: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    min-height: 10rem;
+    left: 10%;
+    border-radius: 5px;
+  }
+  .navbar-modal ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .navbar-modal ul li {
+    display: inline-block;
+    list-style: none;
+  }
+  .navbar-modal ul li a {
+    text-decoration: none;
+    color: #000;
+    background-color: inherit;
+  }
+  .navbar-modal ul li a:hover {
+    color: red;
+  }
+
+  /**** About Section  ****/
+  .aboutme h1 {
+    margin: 2rem;
+  }
+  .aboutme-content {
+    flex-direction: column;
+    padding: 1rem;
+  }
+  #aboutme-image,
+  #aboutme-text,
+  #aboutme-image img {
+    width: 100%;
+  }
+  .highlights {
+    padding: 2rem;
+  }
+  .timeline::after {
+    left: 0;
+  }
+  .timeline .container {
+    width: 100%;
+  }
+  .left,
+  .right {
+    left: 0%;
+  }
+
+  .left > .content .timeline-icon svg,
+  .right > .content .timeline-icon svg {
+    left: -1.1rem;
+  }
+  .calltoAction {
+    text-align: center;
+  }
+  .calltoAction h2 {
+    font-size: 2rem;
+  }
+  .calltoAction h3 {
+    font-size: 1rem;
+  }
+  footer {
+    flex-direction: column;
+    height: auto;
+    justify-content: space-between;
+  }
+  .contact-container {
+    margin: 1rem;
+  }
 }
